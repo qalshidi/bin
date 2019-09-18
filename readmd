@@ -6,7 +6,7 @@
 #		FILE: A markdown formatted file.
 if [ -s ${1:-/dev/stdin} ]
 then
-	pandoc -f markdown -t html ${1:-/dev/stdin} > /tmp/readmd.html
+	pandoc -f markdown -t html ${*:-/dev/stdin} > /tmp/readmd.html
 	xdg-open /tmp/readmd.html
 else
 	printf "Usage:\n\treadmd [FILE]\n\tsomecommand | readmd\n"
