@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script is to read a markdown file and open it in your browser. It assumes you have set your default browser.
+#	Usage: readmd [FILE]
+#	
+#		FILE: A markdown formatted file.
+
+pandoc $1 > /tmp/readmd.html
+xdg-open /tmp/readmd.html
