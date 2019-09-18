@@ -4,7 +4,7 @@ Collection of scripts and tools that I made.
 
 ## readmd
 
-A script to use your browser to read Markdown files.
+A script to use your default browser to read Markdown files.
 
 ### Requirements
 
