@@ -33,10 +33,12 @@ Then run `echo "text/markdown=readmd.desktop;" >> ~/.config/mimeapps.list`.
 
 readmd can read from the file presented in an argument or stdin.
 
-```
+```Shell
 $ readmd [FILE]
 ```
 
-```
+or
+
+```Shell
 $ somecommand | readmd
 ```
