@@ -16,7 +16,7 @@ Download and allow execution of [readmd](readmd) in your `$PATH`.
 
 To use it as your default Markdown reader create the file `~/.local/share/applications/readmd.desktop` with these contents:
 
-```
+```desktop
 [Desktop Entry]
 Encoding=UTF-8
 Version=1.0
