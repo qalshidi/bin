@@ -28,3 +28,15 @@ Comment=Read Markdown files in browser.
 ```
 
 Then run `echo "text/markdown=readmd.desktop;" >> ~/.config/mimeapps.list`.
+
+### Usage
+
+readmd can read from the file presented in an argument or stdin.
+
+```
+$ readmd [FILE]
+```
+
+```
+$ somecommand | readmd
+```
