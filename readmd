@@ -5,5 +5,5 @@
 #	
 #		FILE: A markdown formatted file.
 
-pandoc $1 > /tmp/readmd.html
+pandoc -f markdown -t html $1 > /tmp/readmd.html
 xdg-open /tmp/readmd.html
