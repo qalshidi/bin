@@ -12,7 +12,7 @@ A script to use your default browser to read Markdown files.
 
 ### Installation
 
-Copy and allow execution of readmd in your `$PATH`.
+Download and allow execution of [readmd](readmd) in your `$PATH`.
 
 To use it as your default Markdown reader create the file `~/.local/share/applications/readmd.desktop` with these contents:
 
