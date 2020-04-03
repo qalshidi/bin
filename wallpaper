@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd /home/qusai/Pictures/SDO/
+rm *jpg
+wget https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_0193.jpg
+env DISPLAY=:1 nitrogen --save --head 1 --set-auto latest_4096_0193.jpg
+env DISPLAY=:1 nitrogen --save --head 0 --set-auto latest_4096_0193.jpg
+env DISPLAY=:1 gsettings set org.gnome.desktop.background picture-uri 'file:///home/qusai/Pictures/SDO/latest_4096_0193.jpg'
