@@ -8,5 +8,5 @@ xidlehook \
 	--not-when-audio \
 	`# Finally, suspend an hour after it locks` \
 	--timer 600 \
-	'systemctl suspend' \
+	'i3lock-fancy && systemctl suspend' \
 	''
