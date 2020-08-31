@@ -1,8 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# Gets latest SDO images of sun and applies as wallpaper
 
-cd /home/qusai/Pictures/SDO/
-rm *jpg
-wget https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_0193.jpg
-env DISPLAY=:0 nitrogen --save --head=1 --set-auto latest_4096_0193.jpg
-env DISPLAY=:0 nitrogen --save --head=0 --set-auto latest_4096_0193.jpg
-env DISPLAY=:0 gsettings set org.gnome.desktop.background picture-uri 'file:///home/qusai/Pictures/SDO/latest_4096_0193.jpg'
+wall_cmd='env DISPLAY=:0 nitrogen --save --set-auto'
+dl_cmd='wget -t 3 -N'
+sdo_pref='https://sdo.gsfc.nasa.gov/assets/img/latest'
+wl_1='latest_4096_0193.jpg'
+wl_2='latest_4096_0304.jpg'
+
+cd ~/Pictures/SDO/
+$dl_cmd $sdo_pref/$wl_1
+$dl_cmd $sdo_pref/$wl_2
+$wall_cmd --head=0 $wl_1
+$wall_cmd --head=1 $wl_2

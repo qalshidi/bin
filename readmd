@@ -1,13 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script is to read a markdown file and open it in your browser. It assumes you have set your default browser.
 #	Usage: readmd [FILE]
 #	
 #		FILE: A markdown formatted file.
+
+[[ -z "${TMPDIR}" ]] && export TMPDIR=/tmp
+
 if [ -s ${1:-/dev/stdin} ]
 then
-	pandoc -f markdown -t html ${*:-/dev/stdin} > /tmp/readmd.html
-	xdg-open /tmp/readmd.html
+	pandoc -f markdown -t html ${*:-/dev/stdin} > $TMPDIR/readmd.html
+	xdg-open $TMPDIR/readmd.html
 else
 	printf "Usage:\n\treadmd [FILE]\n\tsomecommand | readmd\n"
 fi

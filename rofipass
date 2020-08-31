@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+
+cd $HOME/.password-store/
+set name (ls **/*.gpg -1 | rofi -dmenu | sed 's/\.gpg$//')
+[ -n "$name" ] && pass -c "$name"
