@@ -2,13 +2,11 @@
 # Gets latest SDO images of sun and applies as wallpaper
 
 wall_cmd='env DISPLAY=:0 nitrogen --save --set-auto'
-dl_cmd='wget -t 3 -N'
+dl_cmd='curl -LO'
 sdo_pref='https://sdo.gsfc.nasa.gov/assets/img/latest'
 wl_1='latest_4096_0193.jpg'
 wl_2='latest_4096_0304.jpg'
 
 cd ~/Pictures/SDO/
-$dl_cmd $sdo_pref/$wl_1
-$dl_cmd $sdo_pref/$wl_2
-$wall_cmd --head=0 $wl_1
-$wall_cmd --head=1 $wl_2
+$dl_cmd $sdo_pref/$wl_1 && $wall_cmd --head=0 $wl_1
+$dl_cmd $sdo_pref/$wl_2 && $wall_cmd --head=1 $wl_2

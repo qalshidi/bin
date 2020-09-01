@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
 
 cd $HOME/.password-store/
-set name (ls **/*.gpg -1 |  sed 's/\.gpg$//' | rofi -theme solarized_alternate -font 'sans-serif 16' -dmenu)
+set name (ls **/*.gpg -1 |  sed 's/\.gpg$//' | rofi -theme solarized_alternate -font 'sans-serif 16' -dmenu -i)
 [ -n "$name" ] && pass -c "$name"
