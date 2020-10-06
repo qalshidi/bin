@@ -1,5 +1,15 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
+#
+# Usage:
+#   [PASSDIR=<password-store-directory>] rofipass
 
-cd $HOME/.password-store/
-set name (ls **/*.gpg -1 |  sed 's/\.gpg$//' | rofi -theme solarized_alternate -font 'sans-serif 16' -dmenu -i)
+# Use default directory if no PASSDIR is set
+[ -z $PASSDIR ] && export PASSDIR=$HOME/.password-store/
+
+cd "$PASSDIR"
+
+# Get the password name from rofi
+name=$(ls **/*.gpg -1 | sed 's/\.gpg$//' | rofi -theme solarized_alternate -font 'sans-serif 16' -dmenu -i) 
+
+# Copy the password to clipboard
 [ -n "$name" ] && pass -c "$name"
