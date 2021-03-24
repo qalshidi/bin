@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Gets latest SDO images of sun and applies as wallpaper
 
-cmd_wall='env DISPLAY=:0 nitrogen --save --set-auto'
+cmd_wall='env DISPLAY=:1 nitrogen --set-auto'
 cmd_dl='curl -LO'
 sdo_url='https://sdo.gsfc.nasa.gov/assets/img/latest'
 wall_1='latest_4096_0193.jpg'
